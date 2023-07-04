@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 align="center" class="bg-primary text-white py-3 rounded-lg">«بلیط مورد نظر خود را انتخاب کنید»</h1><br/>
+
+<div class="row">
+    {% for ticket in data['response'] %}
+        <div class="col-md-4">
+            <form method="POST">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ticket['com'] }}</h5>
+                        <p class="card-text">
+                            ساعت حرکت: {{ ticket['time'] }} <br/>
+                            صندلی خالی: {{ ticket['seats'] }} <br/>
+                            قیمت: {{ ticket['price'] }}
+                        </p>
+                        <input type="hidden" name="index" value="{{ data['response'].index(ticket) }}">
+                    </div>
+                    <div class="card-footer">
+                        <button tpye="submit" class="btn btn-primary">انتخاب</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

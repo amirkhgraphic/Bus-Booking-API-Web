@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 align="center">صفحه اصلی</h1>
+
+<form method="POST">
+    <div class="form-group text-right">
+        <label for="src">مبدا</label>
+        <input type="text" class="form-control" id="src" name="src" placeholder="مبدا را وارد کنید" />
+    </div>
+    <div class="form-group text-right">
+        <label for="dst">مقصد</label>
+        <input type="text" class="form-control" id="dst" name="dst" placeholder="مقصد را وارد کنید" />
+    </div>
+    <div class="form-group text-right">
+        <label for="date">تاریخ</label>
+        <input type="text" class="form-control" id="date" name="date" placeholder="تاریخ را به صورت (سال ماه روز) وارد کنید" />
+    </div>
+    <br/>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">نمایش بلیط</button>
+    </div>
+</form>
+
+{% endblock %}

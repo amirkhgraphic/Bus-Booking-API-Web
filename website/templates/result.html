@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 align="center" class="bg-dark text-white py-3 rounded-lg">اطلاعات سفر</h1><br/>
+
+<div class="row">
+    <div class="text-right col-md-6">
+        <h3 class="text-right">وضعیت آب و هوا در {{ data['dst'] }}:</h3><br/>
+        <h6>آب و هوا: {{ translate_weather }}</h6>
+        <h6>دما: {{ weather['temperature_celsius'] }} درجه سلسیوس</h6>
+        <h6>وزش باد: {{ weather['wind_kmh'] }} km/h</h6>
+        <h6>رطوبت هوا: {{ weather['humidity'] }}</h6>
+        <h6>احتمال بارش: {{ weather['precipitation'] }}</h6>
+    </div>
+    
+    <div class="text-right col-md-6">
+        <h3 class="text-right">اطلاعات بلیط اتوبوس:</h3><br/>
+        <h6>شرکت مسافربری: {{ data['com'] }}</h6>
+        <h6>مبدا: {{ data['src'] }} </h6>
+        <h6>مقصد: {{ data['dst'] }} </h6>
+        <h6>زمان حرکت: {{ data['date'].replace(" ", "/") }} - {{ data['time'] }}</h6>
+        <h6>قیمت: {{ data['price'] }}</h6>
+    </div>
+</div>
+
+
+{% endblock %}
